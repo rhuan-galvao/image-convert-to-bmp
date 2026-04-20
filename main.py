@@ -13,7 +13,7 @@ while True:
   elif command == "list":
     print(dir_list)
   elif command == "convert":
-    input_img = input("Digite o nome do seu arquivo: ")
+    input_img = input("Type your filename to convert: ")
 
     try:
       with Image.open(input_img) as img:
@@ -29,7 +29,7 @@ while True:
 
             image.save(output_path, "BMP")
 
-            print(f'Covnertido: {input_path} pata {output_path}')
+            print(f'Converted: {input_path} to {output_path}')
 
         convert_bmp(input_img)
     except:
