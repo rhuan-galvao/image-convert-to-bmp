@@ -1,17 +1,38 @@
 from PIL import Image
 import os
 
-def convert_to_bmp(input_path, output_path=None):
-  img = Image.open(input_path)
+# List all files in path
+actual_path = os.getcwd()
+dir_list = os.listdir(actual_path)
 
-  img = img.convert("RGB")
+while True:
+  command = input(">> ").strip()
 
-  if not output_path:
-    output_path = os.path.splitext(input_path)[0] + ".bmp"
+  if command.lower == "exit":
+    break
+  elif command == "list":
+    print(dir_list)
+  elif command == "convert":
+    input_img = input("Digite o nome do seu arquivo: ")
 
-  img.save(output_path, "BMP")
+    try:
+      with Image.open(input_img) as img:
+        img.verify()
+        print("Format", img.format)
 
-  print(f'Convetido: {input_path} para {output_path}')
+        def convert_bmp(input_path, output_path=None):
+          image = Image.open(input_path)
+          image = image.convert("RGB")
 
+          if not output_path:
+            output_path = os.path.splitext(input_path)[0] + ".bmp"
 
-convert_to_bmp("test_image.jpg")
+            image.save(output_path, "BMP")
+
+            print(f'Covnertido: {input_path} pata {output_path}')
+
+        convert_bmp(input_img)
+    except:
+      print("Invalid")
+  else:
+    print("Invalid command")
