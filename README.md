@@ -1,83 +1,49 @@
 # 🖼️ Image to BMP Converter
 
-Um programa simples em Python para converter imagens `.jpg` e `.png` para o formato `.bmp`.
----
-## 🚀 Como funciona
+Simple Python CLI tool to convert `.jpg` and `.png` images to `.bmp`.
 
-O programa:
-1. Pede o nome do arquivo
-2. Verifica se o arquivo existe
-3. Valida se é uma imagem
-4. Converte automaticamente para `.bmp`
----
-## 📦 Requisitos
-* Python 3
-* Biblioteca Pillow
+## Commands
 
-Instale com:
+* `list` → list files in current folder
+* `convert` → convert an image to `.bmp`
+* `exit` → close the program
+
+---
+
+## Requirements
 
 ```bash
-pip install pillow
+pip install -r requirements.txt
 ```
 
 ---
 
-## ▶️ Como usar
+## Usage
 
-1. Execute o script:
+Run the program:
 
 ```bash
 python main.py
 ```
 
-2. Digite o nome da imagem:
+Example:
 
 ```bash
-Digite o nome do seu arquivo: imagem.png
-```
+>> list
+image.png
+photo.jpg
 
-3. O arquivo será convertido automaticamente:
+>> convert
+Enter file name: image.png
+Converted: image.png to image.bmp
 
-```bash
-Convertido: imagem.png para imagem.bmp
-```
-
----
-
-## ⚠️ Observações
-
-* Arquivos `.png` com transparência serão convertidos para RGB (sem transparência)
-* O arquivo `.bmp` gerado pode ser maior que o original
-
----
-
-## 📁 Estrutura esperada
-
-```
-/projeto
- ├── main.py
- ├── input.png
- └── output.bmp
+>> exit
 ```
 
 ---
 
-## 💡 Exemplo
+## Notes
 
-Entrada:
-
-```
-foto.jpg
-```
-
-Saída:
-
-```
-foto.bmp
-```
-
----
-
-## 📄 Licença
-
-Projeto simples para estudos 🚀
+* Only `.jpg` and `.png` are supported
+* PNG transparency will be removed
+* BMP files are larger than original images
