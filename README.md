@@ -13,7 +13,7 @@ Simple Python CLI tool to convert `.jpg` and `.png` images to `.bmp`.
 ## Requirements
 
 ```bash
-pip install pillow
+pip install -r requirements.txt
 ```
 
 ---
